@@ -1,17 +1,13 @@
 import './User.css';
-import {Link, Route} from "react-router-dom";
-import Posts from "../posts/Posts";
+import { Link } from "react-router-dom";
 
-export default function User({item, userId}){
+export default function User({item}){
 
     return(
         <div className={'user'}>
-            {item.name} - <Link to={'/users/' + item.id} onClick={() => {
-                userId(item.id)
-            }
-        } >show posts</Link>
+            {item.name} -
+            <Link to={`/users/${item.id}/posts`}>show posts</Link>
 
-            <Route path={'/users/' + item.id} render={() => <Posts />}/>
         </div>
     )
 }

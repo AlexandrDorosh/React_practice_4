@@ -8,9 +8,7 @@ export default function Posts(){
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        getPost(id).then(value => {
-            setPosts([...value.data])
-        })
+        getPost(id).then(value => setPosts(value.data))
     }, [id])
 
     return(
